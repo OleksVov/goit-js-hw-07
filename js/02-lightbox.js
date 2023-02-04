@@ -20,37 +20,15 @@ return galleryItems.map(({preview, original, description }) => {
 }).join('');
 };
 
-// galleryList.addEventListener('click', onGalleryListClick);
+let gallery = new SimpleLightbox('.gallery a', {
+  
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 
-// function onGalleryListClick(event) {
-//     event.preventDefault();
-
-// // if(!event.target.classList.contains('gallery__image')) {
-// //     return;
-// // }
-
-
-// const currentElement = event.target;
-// const parentImage = currentElement.closest('.gallery');
-
-// console.log(currentElement.getAttribute("data-source"));
-
-// var lightbox = $('.gallery a').simpleLightbox({ /* options */ });
-// lightbox.open();
-// };
-
-
-// let gallery = new SimpleLightbox('.gallery a');
-// gallery.on('show.simplelightbox', function () {
-// 	// Do something…
-// });
-
-let gallery = new SimpleLightbox('.gallery a', { /* options */ });
-gallery.on('show.simplelightbox', function(event) {
-    console.log(event);
 });
 
-
+gallery.on('show.simplelightbox');
 
 
 console.log(galleryItems);
